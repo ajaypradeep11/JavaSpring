@@ -1,9 +1,9 @@
 package com.javalearning.ajay;
 
-import org.springframework.beans.factory.BeanFactory;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.core.io.FileSystemResource;
+
 
 //Creating a bean and making the bean do the object function call
 public class LearningBeanMainClass {
