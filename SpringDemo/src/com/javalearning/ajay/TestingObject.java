@@ -2,37 +2,49 @@ package com.javalearning.ajay;
 
 public class TestingObject {
 	
-	public String variable;
-	public int numvariable;
+	SmallObjects obj1 = new SmallObjects();
+	SmallObjects obj2 = new SmallObjects();
+	SmallObjects obj3 = new SmallObjects();
 	
-	public int getNumvariable() {
-		return numvariable;
-	}
 
-	public TestingObject(int numvariable) {
-		this.numvariable = numvariable;
-	}
-	
-	public TestingObject(String variable) {
-		this.variable = variable;
-	}
-	
-	public TestingObject(int numvariable, String variable) {
-		this.numvariable = numvariable;
-		this.variable = variable;
-	}
-	
-	public String getVariable() {
-		return variable;
+
+	public SmallObjects getObj1() {
+		return obj1;
 	}
 
 
-	public void setVariable(String variable) {
-		this.variable = variable;
+
+	public void setObj1(SmallObjects obj1) {
+		this.obj1 = obj1;
 	}
+
+
+
+	public SmallObjects getObj2() {
+		return obj2;
+	}
+
+
+
+	public void setObj2(SmallObjects obj2) {
+		this.obj2 = obj2;
+	}
+
+
+
+	public SmallObjects getObj3() {
+		return obj3;
+	}
+
+
+
+	public void setObj3(SmallObjects obj3) {
+		this.obj3 = obj3;
+	}
+
 
 
 	public void draw() {
-		System.out.println(getVariable() + " checking " + getNumvariable());
+		System.out.println(getObj1().value + " " + getObj2().value + " " +getObj3().value);
 	}
 }

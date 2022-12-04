@@ -6,9 +6,20 @@
     http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
     
     <bean id="mybean" class="com.javalearning.ajay.TestingObject">
-    	<constructor-arg index="0" value="10"/>
-    	<constructor-arg index="1" value="hurreyy!"/>
-    	
-    	
+    	<property name="obj1" ref="value1"></property>
+    	<property name="obj2" ref="value2"></property>
+    	<property name="obj3" ref="value3"></property>
+    </bean>
+    
+    <bean id="value1" class="com.javalearning.ajay.SmallObjects">
+    	<property name="value" value="10"></property>
+    </bean>
+    
+    <bean id="value2" class="com.javalearning.ajay.SmallObjects">
+    	<property name="value" value="20"></property>
+    </bean>
+    
+    <bean id="value3" class="com.javalearning.ajay.SmallObjects">
+    	<property name="value" value="30"></property>
     </bean>
 </beans>
