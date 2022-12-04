@@ -5,7 +5,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 
-//Creating a bean and making the bean do the object function call
+//Creating multiple constructor to learn how the Spring XML calls each constructor
 public class LearningBeanMainClass {
 
 	public static void main(String[] args) {
