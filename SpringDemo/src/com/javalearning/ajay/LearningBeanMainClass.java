@@ -13,7 +13,7 @@ public class LearningBeanMainClass {
 		//BeanFactory factory = new XmlBeanFactory(new FileSystemResource("Spring.xml")); deprecated
 		
 		ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
-		TestingObject obj = (TestingObject)context.getBean("mybean");
+		TestingObject obj = (TestingObject)context.getBean("child");
 		obj.draw();
 	}
 

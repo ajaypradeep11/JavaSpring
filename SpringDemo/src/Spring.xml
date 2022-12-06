@@ -6,12 +6,17 @@
     http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
     
     <!--bean id="mybean" class="com.javalearning.ajay.TestingObject" autowire="byName" scope="singleton"-->
-    <bean id="mybean" class="com.javalearning.ajay.TestingObject" autowire="byName" scope="prototype">
-
+    <bean id="mybean" class="com.javalearning.ajay.TestingObject">
+		<property name="obj1" ref="obj1"></property>
+    </bean>
+    
+    <bean id="child" class="com.javalearning.ajay.TestingObject" parent="mybean">
+    	<property name="obj2" ref="obj2"></property>
+    	<property name="obj3" ref="obj3"></property>
     </bean>
     
     <bean id="obj1" class="com.javalearning.ajay.SmallObjects">
-    	<property name="value" value="10"></property>
+    	<property name="value" value="20"></property>
     </bean>
     
     <bean id="obj2" class="com.javalearning.ajay.SmallObjects">

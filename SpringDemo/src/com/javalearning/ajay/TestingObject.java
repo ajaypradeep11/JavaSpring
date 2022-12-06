@@ -7,9 +7,9 @@ import org.springframework.context.ApplicationContextAware;
 
 public class TestingObject implements ApplicationContextAware, BeanNameAware
 {
-	SmallObjects obj1 = new SmallObjects();
-	SmallObjects obj2 = new SmallObjects();
-	SmallObjects obj3 = new SmallObjects();
+	private SmallObjects obj1;
+	private SmallObjects obj2;
+	private SmallObjects obj3;
 	private ApplicationContext context = null;
 	
 
