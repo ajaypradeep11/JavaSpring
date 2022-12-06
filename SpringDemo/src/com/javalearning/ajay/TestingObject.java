@@ -1,10 +1,16 @@
 package com.javalearning.ajay;
 
-public class TestingObject {
-	
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.BeanNameAware;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
+
+public class TestingObject implements ApplicationContextAware, BeanNameAware
+{
 	SmallObjects obj1 = new SmallObjects();
 	SmallObjects obj2 = new SmallObjects();
 	SmallObjects obj3 = new SmallObjects();
+	private ApplicationContext context = null;
 	
 
 
@@ -46,5 +52,22 @@ public class TestingObject {
 
 	public void draw() {
 		System.out.println(getObj1().value + " " + getObj2().value + " " +getObj3().value);
+	}
+
+
+
+	@Override
+	public void setApplicationContext(ApplicationContext context) throws BeansException {
+		// TODO Auto-generated method stub
+		this.context = context;
+		
+	}
+
+
+
+	@Override
+	public void setBeanName(String beanName) {
+		// TODO Auto-generated method stub
+		System.out.println("beanname : "+ beanName);
 	}
 }
