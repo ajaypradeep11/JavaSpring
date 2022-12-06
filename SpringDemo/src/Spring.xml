@@ -14,7 +14,7 @@
 
     
     <bean id="obj1" class="com.javalearning.ajay.SmallObjects">
-    	<property name="value" value="20"></property>
+    	<property name="value" value="${obj1.value}"></property>
     </bean>
     
     <bean id="obj2" class="com.javalearning.ajay.SmallObjects">
@@ -24,4 +24,11 @@
     <bean id="obj3" class="com.javalearning.ajay.SmallObjects">
     	<property name="value" value="30"></property>
     </bean>
+    
+ 
+    <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
+   		<property name="location" value="beanFactoryPostProcessor.properties"></property>
+   	</bean>
+    
+    
 </beans>

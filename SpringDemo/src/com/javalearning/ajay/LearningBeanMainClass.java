@@ -13,8 +13,8 @@ public class LearningBeanMainClass {
 		// TODO Auto-generated method stub
 		//BeanFactory factory = new XmlBeanFactory(new FileSystemResource("Spring.xml")); deprecated
 		
-		AbstractApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
-		context.registerShutdownHook();
+		ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+		
 		TestingObject obj = (TestingObject)context.getBean("mybean");
 		obj.draw();
 	}

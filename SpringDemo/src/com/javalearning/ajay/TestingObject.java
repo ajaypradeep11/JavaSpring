@@ -5,7 +5,7 @@ import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 
 
-public class TestingObject implements InitializingBean, DisposableBean
+public class TestingObject 
 {
 	private SmallObjects obj1;
 	private SmallObjects obj2;
@@ -55,29 +55,26 @@ public class TestingObject implements InitializingBean, DisposableBean
 
 
 
-
-	@Override
-	public void destroy() throws Exception {
-		// TODO Auto-generated method stub
-		
-		System.out.println("Destroying bean using interface");
-		
-	}
-
-
-
-	@Override
-	public void afterPropertiesSet() throws Exception {
-		// TODO Auto-generated method stub
-		System.out.println("Initializing bean using interface");
-		
-	}
+	/*
+	 * @Override public void destroy() throws Exception { // TODO Auto-generated
+	 * method stub
+	 * 
+	 * System.out.println("Destroying bean using interface");
+	 * 
+	 * }
+	 * 
+	 * 
+	 * 
+	 * @Override public void afterPropertiesSet() throws Exception { // TODO
+	 * Auto-generated method stub
+	 * System.out.println("Initializing bean using interface");
+	 * 
+	 * }
+	 */
 	
-	public void init() {
-		System.out.println("Initializing bean using method");
-	}
-	
-	public void cleanup() {
-		System.out.println("Destroying bean using method");
-	}
+	/*
+	 * public void init() { System.out.println("Initializing bean using method"); }
+	 * 
+	 * public void cleanup() { System.out.println("Destroying bean using method"); }
+	 */
 }
