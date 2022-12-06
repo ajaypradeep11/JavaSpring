@@ -2,6 +2,7 @@ package com.javalearning.ajay;
 
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 
@@ -12,8 +13,9 @@ public class LearningBeanMainClass {
 		// TODO Auto-generated method stub
 		//BeanFactory factory = new XmlBeanFactory(new FileSystemResource("Spring.xml")); deprecated
 		
-		ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
-		TestingObject obj = (TestingObject)context.getBean("child");
+		AbstractApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+		context.registerShutdownHook();
+		TestingObject obj = (TestingObject)context.getBean("mybean");
 		obj.draw();
 	}
 

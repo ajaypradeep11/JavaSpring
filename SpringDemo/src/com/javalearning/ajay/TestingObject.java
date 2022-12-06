@@ -1,16 +1,15 @@
 package com.javalearning.ajay;
 
-import org.springframework.beans.BeansException;
-import org.springframework.beans.factory.BeanNameAware;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.ApplicationContextAware;
 
-public class TestingObject implements ApplicationContextAware, BeanNameAware
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
+
+
+public class TestingObject implements InitializingBean, DisposableBean
 {
 	private SmallObjects obj1;
 	private SmallObjects obj2;
 	private SmallObjects obj3;
-	private ApplicationContext context = null;
 	
 
 
@@ -56,18 +55,29 @@ public class TestingObject implements ApplicationContextAware, BeanNameAware
 
 
 
+
 	@Override
-	public void setApplicationContext(ApplicationContext context) throws BeansException {
+	public void destroy() throws Exception {
 		// TODO Auto-generated method stub
-		this.context = context;
+		
+		System.out.println("Destroying bean using interface");
 		
 	}
 
 
 
 	@Override
-	public void setBeanName(String beanName) {
+	public void afterPropertiesSet() throws Exception {
 		// TODO Auto-generated method stub
-		System.out.println("beanname : "+ beanName);
+		System.out.println("Initializing bean using interface");
+		
+	}
+	
+	public void init() {
+		System.out.println("Initializing bean using method");
+	}
+	
+	public void cleanup() {
+		System.out.println("Destroying bean using method");
 	}
 }
